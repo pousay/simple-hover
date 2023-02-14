@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #3b3b3b;
+}
+.cont {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: auto;
+    margin-top: 50px;
+    justify-content: space-evenly;
+    row-gap:40px;
+    text-align: center;
+}
+
+@media screen and (max-width : 800px) {
+    .cont {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+.icon > svg   {
+    width:  200px;
+    fill:  transparent !important;
+}
+.icon > svg > path {
+    stroke-width: 1;
+    stroke: var(--clr);
+}
+.icon > svg > path {
+    stroke-dasharray: 55 ;
+    stroke-dashoffset: 0;
+}
+
+.icon:hover path {
+    animation: animate 3s linear forwards ;
+}
+
+@keyframes animate {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    40% {
+        stroke-dashoffset: 55;
+    }
+    80% {
+        stroke-dashoffset: 110;
+        fill: transparent;
+    }
+    100% {
+        stroke-dashoffset: 110;
+        fill: var(--clr);
+    }
+}
